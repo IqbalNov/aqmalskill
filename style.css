@@ -34,6 +34,8 @@ header {
   background: transparent;
   padding: 30px 12%;
   transition: all 0.5s ease;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
 }
 
 .logo {
@@ -41,15 +43,9 @@ header {
   align-items: center;
 }
 
-.logo i {
-  color: var(--main-color);
-  font-size: 30px;
-  margin-right: 3px;
-}
-
 .logo span {
   color: var(--text-color);
-  font-size: 20px;
+  font-size: 28px;
   font-weight: 700;
 }
 
@@ -79,49 +75,6 @@ header {
   display: none;
 }
 
-@media (max-width: 1280px) {
-  header {
-    padding: 14px 2%;
-    transition: 0.3s;
-  }
-  .navigation a {
-    padding: 5px 0;
-    margin: 0 20px;
-  }
-}
-
-@media (max-width: 1290px) {
-  .box-menu {
-    display: block;
-  }
-  .navigation {
-    position: absolute;
-    right: -100%;
-    top: 100%;
-    width: 270px;
-    height: 40vh;
-    background: var(--main-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    border-radius: 10px;
-    transition: all 0.5s ease;
-  }
-  .navigation.active {
-    right: 2%; /* Perubahan saat menu terbuka */
-  }
-  .navigation a {
-    display: block;
-    margin: 12px 0;
-    padding: 0 25px;
-    transition: all 0.5s ease;
-  }
-  .navigation a:hover {
-    color: var(--text-color);
-    transform: translateY(5px);
-  }
-}
-
 /* Gaya umum untuk main container */
 .main-arc {
   max-width: 1200px;
@@ -136,28 +89,28 @@ header {
 .profile-section {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Gambar di kiri, teks di kanan */
-  margin-top: 150px; /* Tambahkan jarak antara navbar dan gambar profil */
+  justify-content: space-around;
+  margin-top: 150px;
   margin-bottom: 50px;
-  padding: 0 20px; /* Tambahan padding untuk memberi jarak dengan sisi halaman */
-  animation: fadeIn 1.5s ease-out; /* Animasi untuk fade-in */
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease-out;
 }
 
 .profile-section .profile-img {
-  width: 180px; /* Ukuran gambar profil diatur lebih besar */
-  height: 180px; /* Ukuran gambar profil diatur lebih besar */
-  border-radius: 20%; /* Gambar dengan sudut membulat */
+  width: 180px;
+  height: 180px;
+  border-radius: 0%;
   object-fit: cover;
-  border: 4px solid var(--main-color); /* Border di sekitar gambar */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan untuk efek 3D */
-  margin-right: 20px; /* Tambahkan jarak antara gambar dan teks */
-  animation: slideInLeft 1.2s ease-out; /* Animasi gambar masuk dari kiri */
+  border: 4px solid var(--main-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+  animation: slideInLeft 1.2s ease-out;
 }
 
 .profile-section h1 {
   font-size: 2.5rem;
   color: var(--text-color);
-  animation: slideInRight 1.2s ease-out; /* Animasi teks masuk dari kanan */
+  animation: slideInRight 1.2s ease-out;
 }
 
 .profile-section h1 span {
@@ -208,47 +161,10 @@ header {
   }
 }
 
-/* Responsif untuk mobile */
-@media (max-width: 768px) {
-  .profile-section {
-    flex-direction: column; /* Pada mobile, gambar dan teks akan berada di atas dan bawah */
-    text-align: center; /* Posisikan teks di tengah */
-  }
-
-  .profile-section .profile-img {
-    margin-right: 0; /* Hilangkan margin kanan di mobile */
-    margin-bottom: 20px; /* Tambahkan jarak antara gambar dan teks */
-  }
-}
-
-@media (max-width: 1280px) {
-  .profile-section {
-    flex-direction: column; /* Pada mobile, gambar dan teks akan berada di atas dan bawah */
-    text-align: center; /* Posisikan teks di tengah */
-  }
-
-  .profile-section .profile-img {
-    margin-right: 0; /* Hilangkan margin kanan di mobile */
-    margin-bottom: 20px; /* Tambahkan jarak antara gambar dan teks */
-  }
-}
-
-@media (max-width: 1290px) {
-  .profile-section {
-    flex-direction: column; /* Pada mobile, gambar dan teks akan berada di atas dan bawah */
-    text-align: center; /* Posisikan teks di tengah */
-  }
-
-  .profile-section .profile-img {
-    margin-right: 0; /* Hilangkan margin kanan di mobile */
-    margin-bottom: 20px; /* Tambahkan jarak antara gambar dan teks */
-  }
-}
-
 /* Gaya galeri portfolio */
 .portfolio-gallery h2 {
   font-size: 2rem;
-  color: var(--text-color); /* Warna teks heading */
+  color: var(--text-color);
   margin-bottom: 30px;
 }
 
@@ -269,7 +185,7 @@ header {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  border: 2px solid var(--main-color); /* Border warna utama */
+  border: 2px solid var(--main-color);
   transition: transform 0.3s ease;
 }
 
@@ -280,10 +196,105 @@ header {
 .portfolio-gallery li p {
   margin-top: 10px;
   font-size: 1rem;
-  color: var(--text-color); /* Warna teks deskripsi */
+  color: var(--text-color);
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
 }
 
 /* Responsif */
+@media (max-width: 1280px) {
+  header {
+    padding: 14px 2%;
+    transition: 0.3s;
+  }
+  .navigation a {
+    padding: 5px 0;
+    margin: 0 20px;
+  }
+}
+
+@media (max-width: 1290px) {
+  .box-menu {
+    display: block;
+  }
+  .navigation {
+    position: absolute;
+    right: -100%;
+    top: 100%;
+    width: 270px;
+    height: 35vh;
+    background: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+  }
+  .navigation.active {
+    right: 2%;
+  }
+  .navigation a {
+    display: block;
+    margin: 12px 0;
+    padding: 0 25px;
+    transition: all 0.5s ease;
+  }
+  .navigation a:hover {
+    color: var(--text-color);
+    transform: translateY(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-section .profile-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-section .profile-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 1290px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-section .profile-img {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 768px) {
   .portfolio-gallery ul {
     flex-direction: column;
@@ -292,20 +303,4 @@ header {
   .portfolio-gallery li {
     flex-basis: 100%;
   }
-}
-
-footer {
-  background-color: #333; /* Warna latar belakang */
-  color: #fff; /* Warna teks */
-  text-align: center; /* Pusatkan teks */
-  padding: 10px 0; /* Tambahkan ruang di atas dan bawah */
-  position: relative; /* Atur posisi */
-  bottom: 0; /* Letakkan di bawah */
-  width: 100%; /* Lebar 100% */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Tambahkan bayangan */
-}
-
-footer p {
-  margin: 0; /* Hapus margin default */
-  font-size: 14px; /* Ukuran font */
 }
